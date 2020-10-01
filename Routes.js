@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Splash from "./app/Screens/Splash";
 import Login from "./app/Screens/Login";
 import Home from "./app/Screens/Home";
+import FamilySubCategory from "./app/Screens/FamilySubCategory";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,11 @@ const HomeStack = () => (
       options={{ headerShown: false }}
       name="home"
       component={Home}
+    />
+    <Stack.Screen
+      options={{ headerShown: false }}
+      name="FamilySub"
+      component={FamilySubCategory}
     />
   </Stack.Navigator>
 );

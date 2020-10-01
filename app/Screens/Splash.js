@@ -20,8 +20,8 @@ export default class Splash extends Component {
         }}
       >
         <Image
-          source={require("../../assets/splashscreen.png")}
-          style={{ width: 300, height: 300 }}
+          source={require("../../assets/Logo.png")}
+          style={{ width: 350, height: 150 }}
         />
       </View>
     );

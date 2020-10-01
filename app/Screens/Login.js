@@ -38,8 +38,8 @@ class Login extends Component {
           }}
         >
           <Image
-            source={require("../../assets/Login.png")}
-            style={{ width: 250, height: 250 }}
+            source={require("../../assets/Logo.png")}
+            style={{ width: 350, height: 150 }}
           />
           <View style={{ width: "100%", marginTop: 50, alignItems: "center" }}>
             <TextInput
