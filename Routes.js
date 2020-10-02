@@ -6,6 +6,9 @@ import Splash from "./app/Screens/Splash";
 import Login from "./app/Screens/Login";
 import Home from "./app/Screens/Home";
 import FamilySubCategory from "./app/Screens/FamilySubCategory";
+import LocationScreen from "./app/Screens/LocationScreen";
+import Quiz1 from "./app/Screens/Quiz1";
+import Quiz2 from "./app/Screens/Quiz2";
 
 const Stack = createStackNavigator();
 
@@ -23,6 +26,11 @@ const HomeStack = () => (
   <Stack.Navigator>
     <Stack.Screen
       options={{ headerShown: false }}
+      name="location"
+      component={LocationScreen}
+    />
+    <Stack.Screen
+      options={{ headerShown: false }}
       name="login"
       component={Login}
     />
@@ -35,6 +43,16 @@ const HomeStack = () => (
       options={{ headerShown: false }}
       name="FamilySub"
       component={FamilySubCategory}
+    />
+    <Stack.Screen
+      options={{ headerShown: false }}
+      name="Quiz1"
+      component={Quiz1}
+    />
+    <Stack.Screen
+      options={{ headerShown: false }}
+      name="Quiz2"
+      component={Quiz2}
     />
   </Stack.Navigator>
 );

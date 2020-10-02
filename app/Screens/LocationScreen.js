@@ -8,24 +8,14 @@ import {
   AsyncStorage,
   ActivityIndicator,
 } from "react-native";
-import { MapStateToProps, ThemeColor } from "../Config";
-import { EnterUser } from "../actions/AppActions";
 import { connect } from "react-redux";
+import { MapStateToProps, ThemeColor } from "../Config";
+import { EnterLocation } from "../actions/AppActions";
 
 class Login extends Component {
   state = {
-    Name: "",
-    Mobile: "",
+    Location: "",
   };
-
-  componentDidMount() {
-    this.props.navigation.addListener("focus", () => {
-      this.setState({
-        Name: "",
-        Mobile: "",
-      });
-    });
-  }
 
   render() {
     return (
@@ -54,9 +44,9 @@ class Login extends Component {
             <TextInput
               autoCapitalize="none"
               onChangeText={(val) => {
-                this.setState({ Name: val });
+                this.setState({ Location: val });
               }}
-              value={this.state.Name}
+              value={this.state.Location}
               style={{
                 borderWidth: 2,
                 width: "80%",
@@ -68,39 +58,15 @@ class Login extends Component {
                 paddingLeft: 10,
                 borderColor: ThemeColor,
               }}
-              placeholder="Name"
-              placeholderTextColor={ThemeColor}
-            />
-            <TextInput
-              onChangeText={(val) => {
-                this.setState({ Mobile: val });
-              }}
-              autoCapitalize="none"
-              value={this.state.Mobile}
-              style={{
-                borderWidth: 2,
-                width: "80%",
-                borderRadius: 5,
-                backgroundColor: "rgba(220,220,220,0.3)",
-                marginTop: 10,
-                height: 50,
-                fontSize: 20,
-                paddingLeft: 10,
-                borderColor: ThemeColor,
-              }}
-              keyboardType="numeric"
-              placeholder="Number"
+              placeholder="Enter Location"
               placeholderTextColor={ThemeColor}
             />
           </View>
           <View style={{ marginTop: 20, width: "100%", alignItems: "center" }}>
             <TouchableOpacity
               onPress={() => {
-                this.props.EnterUser({
-                  name: this.state.Name,
-                  mobile: this.state.Mobile,
-                });
-                this.props.navigation.navigate("home");
+                this.props.EnterLocation(this.state.Location);
+                this.props.navigation.navigate("login");
               }}
               style={{
                 backgroundColor: ThemeColor,
@@ -122,4 +88,4 @@ class Login extends Component {
   }
 }
 
-export default connect(MapStateToProps, { EnterUser })(Login);
+export default connect(MapStateToProps, { EnterLocation })(Login);

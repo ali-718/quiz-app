@@ -1,3 +1,4 @@
+import { Icon } from "native-base";
 import React, { Component } from "react";
 import {
   Image,
@@ -8,7 +9,7 @@ import {
   View,
   ImageBackground,
 } from "react-native";
-import { ThemeColor } from "../Config";
+import { Green, ThemeColor } from "../Config";
 
 export default class FamilySubCategory extends Component {
   render() {
@@ -23,119 +24,143 @@ export default class FamilySubCategory extends Component {
           backgroundColor: "white",
         }}
       >
-        <View
+        <SafeAreaView
           style={{
-            width: "95%",
-            justifyContent: "center",
+            width: "100%",
             flex: 1,
-            alignItems: "center",
+            paddingTop: StatusBar.currentHeight,
           }}
         >
           <TouchableOpacity
+            onPress={() => this.props.navigation.goBack()}
             style={{
-              width: "95%",
-              height: 100,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 4,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 4.65,
-
-              elevation: 8,
-              borderRadius: 20,
-              alignItems: "center",
-              justifyContent: "center",
+              width: 70,
+              padding: 15,
               backgroundColor: "white",
-              flexDirection: "row",
+              borderTopRightRadius: 100,
+              borderBottomRightRadius: 100,
+              alignItems: "flex-end",
+              marginTop: 10,
             }}
           >
-            <Image
-              source={require("../../assets/goverment.png")}
-              style={{ width: 250, height: 50 }}
-            />
+            <Icon name="arrowleft" type="AntDesign" style={{ color: Green }} />
           </TouchableOpacity>
 
-          <TouchableOpacity
+          <View
             style={{
-              width: "95%",
-              height: 100,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 4,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 4.65,
-
-              elevation: 8,
-              borderRadius: 20,
-              alignItems: "center",
+              width: "100%",
               justifyContent: "center",
-              backgroundColor: "white",
-              flexDirection: "row",
-              marginTop: 20,
+              flex: 1,
+              alignItems: "center",
             }}
           >
-            <Image
-              source={require("../../assets/ladies.png")}
-              style={{ width: 250, height: 60 }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              width: "95%",
-              height: 100,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 4,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 4.65,
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("Quiz2")}
+              style={{
+                width: "95%",
+                height: 100,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.3,
+                shadowRadius: 4.65,
 
-              elevation: 8,
-              borderRadius: 20,
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "white",
-              flexDirection: "row",
-              marginTop: 20,
-            }}
-          >
-            <Image
-              source={require("../../assets/theatre.png")}
-              style={{ width: 250, height: 65 }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              width: "95%",
-              height: 100,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: 0,
-                height: 4,
-              },
-              shadowOpacity: 0.3,
-              shadowRadius: 4.65,
+                elevation: 8,
+                borderRadius: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "white",
+                flexDirection: "row",
+              }}
+            >
+              <Image
+                source={require("../../assets/goverment.png")}
+                style={{ width: 250, height: 50 }}
+              />
+            </TouchableOpacity>
 
-              elevation: 8,
-              borderRadius: 20,
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "white",
-              flexDirection: "row",
-              marginTop: 20,
-            }}
-          >
-            <Image
-              source={require("../../assets/esports.png")}
-              style={{ width: 250, height: 55 }}
-            />
-          </TouchableOpacity>
-        </View>
+            <TouchableOpacity
+              style={{
+                width: "95%",
+                height: 100,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.3,
+                shadowRadius: 4.65,
+
+                elevation: 8,
+                borderRadius: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "white",
+                flexDirection: "row",
+                marginTop: 20,
+              }}
+            >
+              <Image
+                source={require("../../assets/ladies.png")}
+                style={{ width: 250, height: 60 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: "95%",
+                height: 100,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.3,
+                shadowRadius: 4.65,
+
+                elevation: 8,
+                borderRadius: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "white",
+                flexDirection: "row",
+                marginTop: 20,
+              }}
+            >
+              <Image
+                source={require("../../assets/theatre.png")}
+                style={{ width: 250, height: 65 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: "95%",
+                height: 100,
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.3,
+                shadowRadius: 4.65,
+
+                elevation: 8,
+                borderRadius: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "white",
+                flexDirection: "row",
+                marginTop: 20,
+              }}
+            >
+              <Image
+                source={require("../../assets/esports.png")}
+                style={{ width: 250, height: 55 }}
+              />
+            </TouchableOpacity>
+          </View>
+        </SafeAreaView>
       </ImageBackground>
     );
   }
