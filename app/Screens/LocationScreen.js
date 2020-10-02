@@ -55,10 +55,11 @@ class Login extends Component {
                 marginTop: 10,
                 height: 50,
                 fontSize: 20,
-                paddingLeft: 10,
+                paddingRight: 10,
                 borderColor: ThemeColor,
+                textAlign: "right",
               }}
-              placeholder="Enter Location"
+              placeholder="موقع"
               placeholderTextColor={ThemeColor}
             />
           </View>
@@ -66,7 +67,7 @@ class Login extends Component {
             <TouchableOpacity
               onPress={() => {
                 this.props.EnterLocation(this.state.Location);
-                this.props.navigation.navigate("login");
+                this.props.navigation.navigate("home");
               }}
               style={{
                 backgroundColor: ThemeColor,
@@ -79,7 +80,7 @@ class Login extends Component {
                 marginBottom: 10,
               }}
             >
-              <Text style={{ color: "white", fontWeight: "bold" }}>Submit</Text>
+              <Text style={{ color: "white", fontWeight: "bold" }}>إرسال</Text>
             </TouchableOpacity>
           </View>
         </View>

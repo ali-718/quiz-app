@@ -70,7 +70,9 @@ export default class FamilySubCategory extends Component {
               }}
             >
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Quiz1")}
+                onPress={() =>
+                  this.props.navigation.navigate("login", { from: "Quiz1" })
+                }
                 style={{
                   marginTop: 20,
                   width: "95%",
@@ -108,7 +110,9 @@ export default class FamilySubCategory extends Component {
               </TouchableOpacity>
 
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Quiz2")}
+                onPress={() =>
+                  this.props.navigation.navigate("login", { from: "Quiz4" })
+                }
                 style={{
                   marginTop: 20,
                   width: "95%",
@@ -145,7 +149,9 @@ export default class FamilySubCategory extends Component {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Quiz3")}
+                onPress={() =>
+                  this.props.navigation.navigate("login", { from: "Quiz2" })
+                }
                 style={{
                   marginTop: 20,
                   width: "95%",
@@ -183,7 +189,9 @@ export default class FamilySubCategory extends Component {
               </TouchableOpacity>
 
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("Quiz4")}
+                onPress={() =>
+                  this.props.navigation.navigate("login", { from: "Quiz3" })
+                }
                 style={{
                   marginTop: 20,
                   width: "95%",

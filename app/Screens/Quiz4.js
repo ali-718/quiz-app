@@ -89,7 +89,29 @@ class Quiz extends Component {
         correctAnswer: 2,
       },
       {
-        question: "من هو بطل فيفا بلاي ستيشن سنة 2019؟",
+        question: "متي اطلقت لعبة فورتنايت؟",
+        answers: [
+          {
+            id: 1,
+            ans: "2017",
+          },
+          {
+            id: 2,
+            ans: "2016",
+          },
+          {
+            id: 3,
+            ans: "2015",
+          },
+          {
+            id: 4,
+            ans: "2014",
+          },
+        ],
+        correctAnswer: 1,
+      },
+      {
+        question: "من هو بطل فيفا بلاي ستيشن سنة 2019؟​",
         answers: [
           {
             id: 1,
@@ -270,30 +292,13 @@ class Quiz extends Component {
                   borderRadius: 5,
                   marginTop: 30,
                 }}
-                onPress={this.resetQuiz}
-              >
-                <Text style={{ color: Green, fontWeight: "bold" }}>
-                  Go Back to home
-                </Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={{
-                  backgroundColor: "white",
-                  width: "80%",
-                  height: 40,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: 5,
-                  marginTop: 30,
-                }}
                 onPress={() => {
                   this.props.StartAgain();
-                  this.props.navigation.navigate("login");
+                  this.resetQuiz();
                 }}
               >
                 <Text style={{ color: Green, fontWeight: "bold" }}>
-                  Start with new User
+                  اعادة تشغيل
                 </Text>
               </TouchableOpacity>
             </View>
@@ -426,7 +431,7 @@ class Quiz extends Component {
                         justifyContent: "center",
                       }}
                     >
-                      <Text style={{ color: "white" }}>Next</Text>
+                      <Text style={{ color: "white" }}>التالى</Text>
                     </TouchableOpacity>
                   </View>
                 ) : null}
@@ -451,7 +456,7 @@ class Quiz extends Component {
                         justifyContent: "center",
                       }}
                     >
-                      <Text style={{ color: "white" }}>Finish</Text>
+                      <Text style={{ color: "white" }}>انتهاء</Text>
                     </TouchableOpacity>
                   </View>
                 ) : null}

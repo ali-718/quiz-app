@@ -273,30 +273,13 @@ class Quiz extends Component {
                   borderRadius: 5,
                   marginTop: 30,
                 }}
-                onPress={this.resetQuiz}
-              >
-                <Text style={{ color: Green, fontWeight: "bold" }}>
-                  Go Back to home
-                </Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={{
-                  backgroundColor: "white",
-                  width: "80%",
-                  height: 40,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: 5,
-                  marginTop: 30,
-                }}
                 onPress={() => {
                   this.props.StartAgain();
-                  this.props.navigation.navigate("login");
+                  this.resetQuiz();
                 }}
               >
                 <Text style={{ color: Green, fontWeight: "bold" }}>
-                  Start with new User
+                  اعادة تشغيل
                 </Text>
               </TouchableOpacity>
             </View>
@@ -429,7 +412,7 @@ class Quiz extends Component {
                         justifyContent: "center",
                       }}
                     >
-                      <Text style={{ color: "white" }}>Next</Text>
+                      <Text style={{ color: "white" }}>التالى</Text>
                     </TouchableOpacity>
                   </View>
                 ) : null}
@@ -454,7 +437,7 @@ class Quiz extends Component {
                         justifyContent: "center",
                       }}
                     >
-                      <Text style={{ color: "white" }}>Finish</Text>
+                      <Text style={{ color: "white" }}>انتهاء</Text>
                     </TouchableOpacity>
                   </View>
                 ) : null}

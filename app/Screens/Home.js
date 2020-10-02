@@ -71,10 +71,11 @@ class Home extends Component {
                     marginTop: 10,
                     height: 50,
                     fontSize: 20,
-                    paddingLeft: 10,
+                    paddingRight: 10,
                     borderColor: ThemeColor,
+                    textAlign: "right",
                   }}
-                  placeholder="Enter Location"
+                  placeholder="موقع"
                   placeholderTextColor={ThemeColor}
                 />
               </View>
@@ -100,7 +101,7 @@ class Home extends Component {
                   }}
                 >
                   <Text style={{ color: "white", fontWeight: "bold" }}>
-                    Submit
+                    إرسال
                   </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -172,7 +173,9 @@ class Home extends Component {
             }}
           >
             <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("QuizVR")}
+              onPress={() =>
+                this.props.navigation.push("login", { from: "QuizVR" })
+              }
               style={{
                 width: "95%",
                 height: 150,
@@ -204,7 +207,7 @@ class Home extends Component {
                   color: ThemeColor,
                 }}
               >
-                VR Quiz
+                الجولة الافتراضية
               </Text>
             </TouchableOpacity>
 
@@ -242,7 +245,7 @@ class Home extends Component {
                   color: ThemeColor,
                 }}
               >
-                Family Quiz
+                ألعاب تريفيا
               </Text>
             </TouchableOpacity>
           </View>
