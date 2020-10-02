@@ -9,3 +9,7 @@ export const EnterUser = (location) => (dispatch) => {
 export const StartAgain = () => (dispatch) => {
   dispatch({ type: "START_AGAIN" });
 };
+
+export const fillMarks = (marks) => (dispatch) => {
+  dispatch({ type: "MARKS", payload: marks });
+};

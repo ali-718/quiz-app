@@ -13,7 +13,7 @@ import {
 import { ThemeColor, Green, Yellow, MapStateToProps } from "../Config";
 import * as Progress from "react-native-progress";
 import * as Animatable from "react-native-animatable";
-import { StartAgain } from "../actions/AppActions";
+import { StartAgain, fillMarks } from "../actions/AppActions";
 import { connect } from "react-redux";
 
 class Quiz extends Component {
@@ -179,6 +179,7 @@ class Quiz extends Component {
     this.setState({
       quizFinished: true,
     });
+    this.props.fillMarks(this.state.correctAnswers);
   };
 
   render() {
@@ -221,7 +222,7 @@ class Quiz extends Component {
                 100 /{" "}
                 <Text style={{ color: Yellow }}>
                   {" "}
-                  {(this.state.correctAnswers / this.state.data1.length) * 100}
+                  {(this.state.correctAnswers / 5) * 100}
                 </Text>
               </Text>
 
@@ -505,4 +506,4 @@ class Quiz extends Component {
   }
 }
 
-export default connect(MapStateToProps, { StartAgain })(Quiz);
+export default connect(MapStateToProps, { StartAgain, fillMarks })(Quiz);

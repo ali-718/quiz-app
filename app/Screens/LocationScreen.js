@@ -66,6 +66,10 @@ class Login extends Component {
           <View style={{ marginTop: 20, width: "100%", alignItems: "center" }}>
             <TouchableOpacity
               onPress={() => {
+                if (this.state.Location.trim() == "") {
+                  alert("enter location");
+                  return;
+                }
                 this.props.EnterLocation(this.state.Location);
                 this.props.navigation.navigate("home");
               }}

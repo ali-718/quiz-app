@@ -207,7 +207,7 @@ class Home extends Component {
                   color: ThemeColor,
                 }}
               >
-                الجولة الافتراضية
+                الواقع الافتراضي
               </Text>
             </TouchableOpacity>
 

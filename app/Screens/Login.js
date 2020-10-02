@@ -136,10 +136,18 @@ class Login extends Component {
             >
               <TouchableOpacity
                 onPress={() => {
+                  if (
+                    this.state.Name.trim() == "" ||
+                    this.state.Mobile.trim() == ""
+                  ) {
+                    alert("fill all fields");
+                    return;
+                  }
                   this.props.EnterUser({
                     name: this.state.Name,
                     mobile: this.state.Mobile,
                   });
+
                   this.props.navigation.navigate(this.state.from);
                 }}
                 style={{

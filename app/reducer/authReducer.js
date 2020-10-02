@@ -1,11 +1,17 @@
 const initialState = {
   user: {},
   location: "",
+  correctAnswer: 0,
 };
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
+    case "MARKS":
+      return {
+        ...state,
+        correctAnswer: payload,
+      };
     case "LOCATION":
       return {
         ...state,
@@ -15,6 +21,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         user: {},
+        correctAnswer: 0,
       };
     case "USER":
       return {
