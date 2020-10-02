@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   ImageBackground,
+  ScrollView,
 } from "react-native";
 import { Green, ThemeColor } from "../Config";
 
@@ -45,121 +46,181 @@ export default class FamilySubCategory extends Component {
           >
             <Icon name="arrowleft" type="AntDesign" style={{ color: Green }} />
           </TouchableOpacity>
-
-          <View
-            style={{
-              width: "100%",
-              justifyContent: "center",
-              flex: 1,
-              alignItems: "center",
-            }}
-          >
-            <TouchableOpacity
-              onPress={() => this.props.navigation.navigate("Quiz2")}
+          <ScrollView style={{ width: "100%", flex: 1 }}>
+            <View
               style={{
-                width: "95%",
-                height: 100,
-                shadowColor: "#000",
-                shadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                shadowOpacity: 0.3,
-                shadowRadius: 4.65,
-
-                elevation: 8,
-                borderRadius: 20,
+                width: "100%",
+                flex: 0.2,
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "white",
-                flexDirection: "row",
               }}
             >
               <Image
-                source={require("../../assets/goverment.png")}
-                style={{ width: 250, height: 50 }}
+                source={require("../../assets/whitelogo.png")}
+                style={{ width: 250, height: 110 }}
               />
-            </TouchableOpacity>
+            </View>
 
-            <TouchableOpacity
+            <View
               style={{
-                width: "95%",
-                height: 100,
-                shadowColor: "#000",
-                shadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                shadowOpacity: 0.3,
-                shadowRadius: 4.65,
-
-                elevation: 8,
-                borderRadius: 20,
+                width: "100%",
+                flex: 1,
                 alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "white",
-                flexDirection: "row",
-                marginTop: 20,
+                marginBottom: 20,
               }}
             >
-              <Image
-                source={require("../../assets/ladies.png")}
-                style={{ width: 250, height: 60 }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                width: "95%",
-                height: 100,
-                shadowColor: "#000",
-                shadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                shadowOpacity: 0.3,
-                shadowRadius: 4.65,
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("Quiz1")}
+                style={{
+                  marginTop: 20,
+                  width: "95%",
+                  height: 150,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.3,
+                  shadowRadius: 4.65,
 
-                elevation: 8,
-                borderRadius: 20,
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "white",
-                flexDirection: "row",
-                marginTop: 20,
-              }}
-            >
-              <Image
-                source={require("../../assets/theatre.png")}
-                style={{ width: 250, height: 65 }}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                width: "95%",
-                height: 100,
-                shadowColor: "#000",
-                shadowOffset: {
-                  width: 0,
-                  height: 4,
-                },
-                shadowOpacity: 0.3,
-                shadowRadius: 4.65,
+                  elevation: 8,
+                  borderRadius: 20,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  flexDirection: "row",
+                }}
+              >
+                <Image
+                  source={require("../../assets/sports.png")}
+                  style={{ width: 130, height: 130 }}
+                />
+                <Text
+                  style={{
+                    fontSize: 24,
+                    fontWeight: "bold",
+                    marginLeft: 20,
+                    color: ThemeColor,
+                  }}
+                >
+                  رياضه
+                </Text>
+              </TouchableOpacity>
 
-                elevation: 8,
-                borderRadius: 20,
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "white",
-                flexDirection: "row",
-                marginTop: 20,
-              }}
-            >
-              <Image
-                source={require("../../assets/esports.png")}
-                style={{ width: 250, height: 55 }}
-              />
-            </TouchableOpacity>
-          </View>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("Quiz2")}
+                style={{
+                  marginTop: 20,
+                  width: "95%",
+                  height: 150,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.3,
+                  shadowRadius: 4.65,
+
+                  elevation: 8,
+                  borderRadius: 20,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  flexDirection: "row",
+                }}
+              >
+                <Image
+                  source={require("../../assets/esports.png")}
+                  style={{ width: 130, height: 130 }}
+                />
+                <Text
+                  style={{
+                    fontSize: 24,
+                    fontWeight: "bold",
+                    marginLeft: 20,
+                    color: ThemeColor,
+                  }}
+                >
+                  رياضة الكترونية
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("Quiz3")}
+                style={{
+                  marginTop: 20,
+                  width: "95%",
+                  height: 150,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.3,
+                  shadowRadius: 4.65,
+
+                  elevation: 8,
+                  borderRadius: 20,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  flexDirection: "row",
+                }}
+              >
+                <Image
+                  source={require("../../assets/art.png")}
+                  style={{ width: 130, height: 130 }}
+                />
+                <Text
+                  style={{
+                    fontSize: 24,
+                    fontWeight: "bold",
+                    marginLeft: 20,
+                    color: ThemeColor,
+                  }}
+                >
+                  فن
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => this.props.navigation.navigate("Quiz4")}
+                style={{
+                  marginTop: 20,
+                  width: "95%",
+                  height: 150,
+                  shadowColor: "#000",
+                  shadowOffset: {
+                    width: 0,
+                    height: 4,
+                  },
+                  shadowOpacity: 0.3,
+                  shadowRadius: 4.65,
+
+                  elevation: 8,
+                  borderRadius: 20,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  flexDirection: "row",
+                }}
+              >
+                <Image
+                  source={require("../../assets/woman.png")}
+                  style={{ width: 130, height: 130 }}
+                />
+                <Text
+                  style={{
+                    fontSize: 24,
+                    fontWeight: "bold",
+                    marginLeft: 20,
+                    color: ThemeColor,
+                  }}
+                >
+                  المرأة
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </ScrollView>
         </SafeAreaView>
       </ImageBackground>
     );

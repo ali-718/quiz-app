@@ -152,13 +152,27 @@ class Home extends Component {
 
           <View
             style={{
-              width: "95%",
+              width: "100%",
+              flex: 0.4,
+              alignItems: "center",
               justifyContent: "center",
+            }}
+          >
+            <Image
+              source={require("../../assets/whitelogo.png")}
+              style={{ width: 250, height: 110 }}
+            />
+          </View>
+
+          <View
+            style={{
+              width: "100%",
               flex: 1,
               alignItems: "center",
             }}
           >
             <TouchableOpacity
+              onPress={() => this.props.navigation.navigate("QuizVR")}
               style={{
                 width: "95%",
                 height: 150,

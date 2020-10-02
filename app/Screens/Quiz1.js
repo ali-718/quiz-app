@@ -10,15 +10,18 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { ThemeColor, Green, Yellow } from "../Config";
+import { ThemeColor, Green, Yellow, MapStateToProps } from "../Config";
 import * as Progress from "react-native-progress";
 import * as Animatable from "react-native-animatable";
+import { StartAgain } from "../actions/AppActions";
+import { connect } from "react-redux";
 
-export default class Quiz extends Component {
+class Quiz extends Component {
   state = {
     currentQuestion: 1,
     selectedAnswer: "",
-    quizFinished: true,
+    quizFinished: false,
+
     data1: [
       {
         question: " لأي بلد لعب أوزيل وفاز بكأس العالم 2014 FIFA في البرازيل",
@@ -270,6 +273,7 @@ export default class Quiz extends Component {
       selectedAnswer: "",
       quizFinished: false,
     });
+    this.props.navigation.navigate("home");
   };
 
   nextQuestion = () => {
@@ -348,7 +352,7 @@ export default class Quiz extends Component {
               >
                 {(this.state.correctAnswers / 5) * 100 > 50
                   ? "شكلك متابع للرياضة جامد"
-                  : "  معلوماتك الرياضية مش قد كدة​"}
+                  : "معلوماتك الرياضية مش قد كدة"}
               </Text>
             </View>
 
@@ -389,24 +393,10 @@ export default class Quiz extends Component {
                     paddingRight: 10,
                   }}
                 >
-                  في سيتي كلوب يوجد اكادميات عالمية يوجد أكاديميات في كلاً من
-                  الرياضات الآتيه:
+                  في سيتي كلوب يوجد مسرح يقام حفلات هولوغرام كل شهر في منطقة
+                  المسرح حيث يمكن للأعضاء الاستماع ومشاهدة مغنيهم المفضل من
+                  العصور القديمة و الحديثة
                 </Text>
-
-                <View style={{ width: "100%", marginRight: 20, marginTop: 20 }}>
-                  <Text
-                    style={{
-                      fontSize: Dimensions.get("window").width > 400 ? 35 : 22,
-                      color: "white",
-                      textAlign: "right",
-                      marginLeft: 10,
-                      marginTop: 10,
-                    }}
-                  >
-                    ​ كرة القدم​ كره السلة​ كره اليد​ كره الطائرة​ تنس​ سباحة​
-                    الفنون القتالية​​
-                  </Text>
-                </View>
               </View>
 
               <TouchableOpacity
@@ -422,7 +412,27 @@ export default class Quiz extends Component {
                 onPress={this.resetQuiz}
               >
                 <Text style={{ color: Green, fontWeight: "bold" }}>
-                  Start Again
+                  Go Back to home
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={{
+                  backgroundColor: "white",
+                  width: "80%",
+                  height: 40,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: 5,
+                  marginTop: 30,
+                }}
+                onPress={() => {
+                  this.props.StartAgain();
+                  this.props.navigation.navigate("login");
+                }}
+              >
+                <Text style={{ color: Green, fontWeight: "bold" }}>
+                  Start with new User
                 </Text>
               </TouchableOpacity>
             </View>
@@ -431,6 +441,7 @@ export default class Quiz extends Component {
         <SafeAreaView style={{ width: "100%", flex: 1 }}>
           <View style={{ width: "100%" }}>
             <TouchableOpacity
+              onPress={() => this.props.navigation.goBack()}
               style={{
                 width: 70,
                 padding: 15,
@@ -627,3 +638,5 @@ export default class Quiz extends Component {
     );
   }
 }
+
+export default connect(MapStateToProps, { StartAgain })(Quiz);

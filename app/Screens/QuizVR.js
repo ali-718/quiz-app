@@ -23,224 +23,102 @@ class Quiz extends Component {
     quizFinished: false,
     data1: [
       {
-        question: "من هو المطرب صاحب لقب الهضبة؟​",
+        question: "ما هي الاكاديميات العالميه المتوفره في النادي؟",
         answers: [
           {
             id: 1,
-            ans: "عمرو دياب",
+            ans: "سباحة",
           },
           {
             id: 2,
-            ans: "محمد منير",
+            ans: "رياضة بدنية",
           },
           {
             id: 3,
-            ans: "كاظم الساهر",
-          },
-          {
-            id: 4,
-            ans: "محمد فؤاد",
+            ans: "ركوب خيل",
           },
         ],
         correctAnswer: 1,
       },
       {
-        question: "من من الاتي في فريف تحكيم the voice kids arabic؟​​",
+        question: "كم عدد فروع النادي؟",
         answers: [
           {
             id: 1,
-            ans: "اليسا ",
+            ans: "10",
           },
           {
             id: 2,
-            ans: "نانسي عجرم ",
+            ans: "5",
           },
           {
             id: 3,
-            ans: "شيرين عبد الوهاب",
+            ans: "3",
           },
           {
             id: 4,
-            ans: "هيفاء وهبي​",
+            ans: "15",
           },
         ],
-        correctAnswer: 2,
+        correctAnswer: 4,
       },
       {
-        question: "من هو مطرب أغنية “أهواك واتمنى لو أنساك”؟",
+        question: "كم اكادميه عالميه متاحه في النادي؟",
         answers: [
           {
             id: 1,
-            ans: "عبد الحليم حافظ",
+            ans: "5",
           },
           {
             id: 2,
-            ans: "ام كلثوم",
+            ans: "12",
           },
           {
             id: 3,
-            ans: "سيد درويش",
+            ans: "7",
           },
           {
             id: 4,
-            ans: "شادية",
-          },
-        ],
-        correctAnswer: 1,
-      },
-      {
-        question: "البوم حدوتة مصرية يعود إلى من من المطربين؟",
-        answers: [
-          {
-            id: 1,
-            ans: "محمد منير",
-          },
-          {
-            id: 2,
-            ans: "محمد فؤاد",
-          },
-          {
-            id: 3,
-            ans: "هاني شاكر",
-          },
-          {
-            id: 4,
-            ans: "محرم فؤاد​",
-          },
-        ],
-        correctAnswer: 1,
-      },
-      {
-        question: "من هو الموسيقار صاحب لقب “موسيقار الأجيال”؟​",
-        answers: [
-          {
-            id: 1,
-            ans: "عبد الوهاب",
-          },
-          {
-            id: 2,
-            ans: "عبد الغني السيد",
-          },
-          {
-            id: 3,
-            ans: "علي الحجار",
-          },
-          {
-            id: 4,
-            ans: "احمد عدويه ",
-          },
-        ],
-        correctAnswer: 1,
-      },
-      {
-        question: "من هو المطرب صاحب لقب الكينج؟​",
-        answers: [
-          {
-            id: 1,
-            ans: "محمد منير",
-          },
-          {
-            id: 2,
-            ans: "محمد حماقي",
-          },
-          {
-            id: 3,
-            ans: "محرم فؤاد",
-          },
-          {
-            id: 4,
-            ans: "محمد فؤاد",
-          },
-        ],
-        correctAnswer: 1,
-      },
-      {
-        question: "من هو المطرب زوج المطربة شيرين عبد الوهاب؟",
-        answers: [
-          {
-            id: 1,
-            ans: "حسام حبيب",
-          },
-          {
-            id: 2,
-            ans: " محمد حماقي",
-          },
-          {
-            id: 3,
-            ans: "رامي صبري",
-          },
-          {
-            id: 4,
-            ans: "رامي عشور​",
-          },
-        ],
-        correctAnswer: 1,
-      },
-      {
-        question: "ما هي جنسية المطرب النجم صابر الرباعي؟",
-        answers: [
-          {
-            id: 1,
-            ans: "لبناني",
-          },
-          {
-            id: 2,
-            ans: "تونسي ",
-          },
-          {
-            id: 3,
-            ans: "مغربي ",
-          },
-          {
-            id: 4,
-            ans: "مصري",
-          },
-        ],
-        correctAnswer: 2,
-      },
-      {
-        question: "من هو ابن الفنانة اللبنانية فيروز؟",
-        answers: [
-          {
-            id: 1,
-            ans: "صابر الرباعي",
-          },
-          {
-            id: 2,
-            ans: "غير معروف",
-          },
-          {
-            id: 3,
-            ans: "زياد الرحباني",
-          },
-          {
-            id: 4,
-            ans: "وائل كفوري",
+            ans: "10",
           },
         ],
         correctAnswer: 3,
       },
       {
-        question: "متى ولد الفنان الشاب خالد؟",
+        question: "هل يوجد مبني حكومي في النادي؟",
         answers: [
           {
             id: 1,
-            ans: "1970",
+            ans: "نعم",
           },
           {
             id: 2,
-            ans: "1960",
+            ans: "لا",
+          },
+        ],
+        correctAnswer: 1,
+      },
+      {
+        question: "ما أنواع الرياضه المتاحه في النادي غير الاكادميات العالميه؟",
+        answers: [
+          {
+            id: 1,
+            ans: "الرياضة الالكترونية",
+          },
+          {
+            id: 2,
+            ans: "رياضة التسلق",
           },
           {
             id: 3,
-            ans: "1978",
+            ans: "رياضة ركوب الدراجة",
           },
           {
             id: 4,
-            ans: "1695",
+            ans: "الرياضات العقلية",
           },
         ],
-        correctAnswer: 2,
+        correctAnswer: 1,
       },
     ],
     correctAnswers: 0,
@@ -334,19 +212,6 @@ class Quiz extends Component {
                   {(this.state.correctAnswers / this.state.data1.length) * 100}
                 </Text>
               </Text>
-
-              <Text
-                style={{
-                  fontSize: Dimensions.get("window").width > 400 ? 53 : 25,
-                  color: "white",
-                  marginTop: 20,
-                  textAlign: "right",
-                }}
-              >
-                {(this.state.correctAnswers / 5) * 100 > 50
-                  ? "شكلك متابع للفن جامد"
-                  : "معلوماتك الفنية مش قد كدة"}
-              </Text>
             </View>
 
             <View
@@ -375,23 +240,6 @@ class Quiz extends Component {
                 // justifyContent: "center",
               }}
             >
-              <View
-                style={{ width: "100%", alignItems: "center", marginTop: 20 }}
-              >
-                <Text
-                  style={{
-                    fontSize: Dimensions.get("window").width > 400 ? 35 : 20,
-                    color: "white",
-                    textAlign: "right",
-                    paddingRight: 10,
-                  }}
-                >
-                  في سيتي كلوب يوجد مسرح يقام حفلات هولوغرام كل شهر في منطقة
-                  المسرح حيث يمكن للأعضاء الاستماع ومشاهدة مغنيهم المفضل من
-                  العصور القديمة و الحديثة
-                </Text>
-              </View>
-
               <TouchableOpacity
                 style={{
                   backgroundColor: "white",
