@@ -50,23 +50,11 @@ export default class FamilySubCategory extends Component {
             <View
               style={{
                 width: "100%",
-                flex: 0.2,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Image
-                source={require("../../assets/whitelogo.png")}
-                style={{ width: 250, height: 110 }}
-              />
-            </View>
-
-            <View
-              style={{
-                width: "100%",
                 flex: 1,
                 alignItems: "center",
                 marginBottom: 20,
+                justifyContent: "center",
+                marginTop: 10,
               }}
             >
               <TouchableOpacity
@@ -227,6 +215,19 @@ export default class FamilySubCategory extends Component {
                   المرأة
                 </Text>
               </TouchableOpacity>
+            </View>
+            <View
+              style={{
+                width: "100%",
+                flex: 0.3,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                source={require("../../assets/Logo.png")}
+                style={{ width: 350, height: 140 }}
+              />
             </View>
           </ScrollView>
         </SafeAreaView>

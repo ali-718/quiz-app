@@ -154,22 +154,9 @@ class Home extends Component {
           <View
             style={{
               width: "100%",
-              flex: 0.4,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Image
-              source={require("../../assets/whitelogo.png")}
-              style={{ width: 250, height: 110 }}
-            />
-          </View>
-
-          <View
-            style={{
-              width: "100%",
               flex: 1,
               alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <TouchableOpacity
@@ -248,6 +235,19 @@ class Home extends Component {
                 ألعاب تريفيا
               </Text>
             </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              width: "100%",
+              flex: 0.4,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              source={require("../../assets/Logo.png")}
+              style={{ width: 350, height: 140 }}
+            />
           </View>
         </SafeAreaView>
       </ImageBackground>

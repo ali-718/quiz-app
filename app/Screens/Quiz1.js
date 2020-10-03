@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import {
   Dimensions,
   Image,
+  ImageBackground,
   Modal,
   SafeAreaView,
   StatusBar,
@@ -13,7 +14,7 @@ import {
 import { ThemeColor, Green, Yellow, MapStateToProps } from "../Config";
 import * as Progress from "react-native-progress";
 import * as Animatable from "react-native-animatable";
-import { StartAgain, fillMarks } from "../actions/AppActions";
+import { StartAgain, fillMarks, submitQuiz } from "../actions/AppActions";
 import { connect } from "react-redux";
 
 class Quiz extends Component {
@@ -121,7 +122,7 @@ class Quiz extends Component {
           },
           {
             id: 2,
-            ans: "المنيا",
+            ans: "المانيا",
           },
           {
             id: 3,
@@ -296,18 +297,43 @@ class Quiz extends Component {
     this.setState({
       quizFinished: true,
     });
+    const auth = this.props.auth;
     this.props.fillMarks(this.state.correctAnswers);
+    this.props
+      .submitQuiz(
+        auth.user?.name,
+        auth.user?.mobile,
+        "فن",
+        this.state.correctAnswers,
+        auth.location
+      )
+      .catch((e) => {
+        Alert.alert(
+          "Error",
+          "unable to submit quiz, kindly check your internet connection",
+          [
+            {
+              text: "cancel",
+            },
+            {
+              text: "retry",
+              onPress: () => this.finishQuiz(),
+            },
+          ]
+        );
+      });
   };
 
   render() {
     return (
-      <View
+      <ImageBackground
         style={{
           width: "100%",
           flex: 1,
           backgroundColor: Green,
           paddingTop: StatusBar.currentHeight,
         }}
+        source={require("../../assets/quizBackground.jpg")}
       >
         <Modal visible={this.state.quizFinished} animated animationType="slide">
           <SafeAreaView
@@ -322,7 +348,7 @@ class Quiz extends Component {
             >
               <Text
                 style={{
-                  fontSize: Dimensions.get("window").width > 400 ? 53 : 33,
+                  fontSize: Dimensions.get("window").width > 600 ? 53 : 30,
                   color: "white",
                 }}
               >
@@ -330,7 +356,7 @@ class Quiz extends Component {
               </Text>
               <Text
                 style={{
-                  fontSize: Dimensions.get("window").width > 400 ? 50 : 30,
+                  fontSize: Dimensions.get("window").width > 600 ? 50 : 28,
                   marginTop: 10,
                   fontWeight: "bold",
                   color: "white",
@@ -345,7 +371,7 @@ class Quiz extends Component {
 
               <Text
                 style={{
-                  fontSize: Dimensions.get("window").width > 400 ? 53 : 25,
+                  fontSize: Dimensions.get("window").width > 600 ? 53 : 22,
                   color: "white",
                   marginTop: 20,
                   textAlign: "right",
@@ -388,15 +414,29 @@ class Quiz extends Component {
               >
                 <Text
                   style={{
-                    fontSize: Dimensions.get("window").width > 400 ? 35 : 20,
+                    fontSize: Dimensions.get("window").width > 600 ? 35 : 18,
                     color: "white",
                     textAlign: "right",
                     paddingRight: 10,
                   }}
                 >
-                  في سيتي كلوب يوجد مسرح يقام حفلات هولوغرام كل شهر في منطقة
-                  المسرح حيث يمكن للأعضاء الاستماع ومشاهدة مغنيهم المفضل من
-                  العصور القديمة و الحديثة
+                  في سيتي كلوب يوجد اكادميات عالمية يوجد أكاديميات في كلاً من
+                  الرياضات الآتيه:​
+                </Text>
+              </View>
+              <View
+                style={{ width: "100%", alignItems: "center", marginTop: 20 }}
+              >
+                <Text
+                  style={{
+                    fontSize: Dimensions.get("window").width > 600 ? 35 : 18,
+                    color: "white",
+                    textAlign: "right",
+                    paddingRight: 10,
+                  }}
+                >
+                  كرة القدم​ كره السلة​ كره اليد​ كره الطائرة​ تنس​ سباحة​
+                  الفنون القتالية​
                 </Text>
               </View>
 
@@ -449,7 +489,7 @@ class Quiz extends Component {
               <Text
                 style={{
                   color: "white",
-                  fontSize: Dimensions.get("window").width > 400 ? 22 : 18,
+                  fontSize: Dimensions.get("window").width > 600 ? 30 : 18,
                 }}
               >
                 Question {this.state.currentQuestion} / 5
@@ -478,7 +518,7 @@ class Quiz extends Component {
                   style={{
                     color: Green,
                     fontWeight: "bold",
-                    fontSize: Dimensions.get("window").width > 400 ? 22 : 18,
+                    fontSize: Dimensions.get("window").width > 600 ? 22 : 16,
                     textAlign: "right",
                   }}
                 >
@@ -520,7 +560,7 @@ class Quiz extends Component {
                               : Green,
                           textAlign: "right",
                           fontSize:
-                            Dimensions.get("window").width > 400 ? 22 : 18,
+                            Dimensions.get("window").width > 600 ? 22 : 16,
                         }}
                       >
                         {item.ans}
@@ -604,7 +644,7 @@ class Quiz extends Component {
             ></Animatable.View>
           </View>
 
-          <View
+          {/* <View
             style={{
               width: "100%",
               flex: 1,
@@ -616,11 +656,13 @@ class Quiz extends Component {
               source={require("../../assets/whitelogo.png")}
               style={{ width: 250, height: 110 }}
             />
-          </View>
+          </View> */}
         </SafeAreaView>
-      </View>
+      </ImageBackground>
     );
   }
 }
 
-export default connect(MapStateToProps, { StartAgain, fillMarks })(Quiz);
+export default connect(MapStateToProps, { StartAgain, fillMarks, submitQuiz })(
+  Quiz
+);
