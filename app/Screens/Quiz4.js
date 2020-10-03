@@ -113,26 +113,27 @@ class Quiz extends Component {
         correctAnswer: 1,
       },
       {
-        question: "من هو بطل فيفا بلاي ستيشن سنة 2019؟​",
+        question: "دي صورة دراع",
         answers: [
           {
             id: 1,
-            ans: "محمد حركوس",
+            ans: "بلاي ستيشن",
           },
           {
             id: 2,
-            ans: "مساعد الدوسري",
+            ans: "WII",
           },
           {
             id: 3,
-            ans: "سبينسر ايلينج",
+            ans: "Nintendo",
           },
           {
             id: 4,
-            ans: "محمد الباشا",
+            ans: "Xbox",
           },
         ],
-        correctAnswer: 1,
+        correctAnswer: 4,
+        image: true,
       },
     ],
     correctAnswers: 0,
@@ -398,6 +399,14 @@ class Quiz extends Component {
                   {this.state.data1[this.state.currentQuestion - 1].question}
                 </Text>
               </View>
+              {this.state.data1[this.state.currentQuestion - 1]?.image ? (
+                <View style={{ width: "100%", alignItems: "center" }}>
+                  <Image
+                    style={{ width: 120, height: 100 }}
+                    source={require("../../assets/xbox.png")}
+                  />
+                </View>
+              ) : null}
 
               <View style={{ width: "100%", marginTop: 20 }}>
                 {this.state.data1[this.state.currentQuestion - 1].answers.map(
