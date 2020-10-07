@@ -46,6 +46,28 @@ class Quiz extends Component {
         correctAnswer: 2,
       },
       {
+        question: "كم عدد الخرائط في لعبة  PUBG",
+        answers: [
+          {
+            id: 1,
+            ans: "6",
+          },
+          {
+            id: 2,
+            ans: "5",
+          },
+          {
+            id: 3,
+            ans: "4",
+          },
+          {
+            id: 4,
+            ans: "3",
+          },
+        ],
+        correctAnswer: 2,
+      },
+      {
         question: "من الاعبان الذين ظهروا علي غلاف فيفا 2020",
         answers: [
           {
@@ -90,27 +112,28 @@ class Quiz extends Component {
         ],
         correctAnswer: 2,
       },
+
       {
-        question: "متي اطلقت لعبة فورتنايت؟",
+        question: "ما هي اكثر دولة تمارس فيها PUBG",
         answers: [
           {
             id: 1,
-            ans: "2017",
+            ans: "الهند",
           },
           {
             id: 2,
-            ans: "2016",
+            ans: "الصين",
           },
           {
             id: 3,
-            ans: "2015",
+            ans: "مصر",
           },
           {
             id: 4,
-            ans: "2014",
+            ans: "أمريكا",
           },
         ],
-        correctAnswer: 1,
+        correctAnswer: 2,
       },
       {
         question: "دي صورة دراع",
@@ -209,6 +232,23 @@ class Quiz extends Component {
           ]
         );
       });
+  };
+
+  componentDidMount() {
+    this.props.navigation.addListener("focus", () => {
+      this.shuffle(this.state.data1);
+    });
+  }
+
+  shuffle = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+
+    this.setState({
+      data1: a,
+    });
   };
 
   render() {

@@ -248,6 +248,23 @@ class Quiz extends Component {
     correctAnswers: 0,
   };
 
+  componentDidMount() {
+    this.props.navigation.addListener("focus", () => {
+      this.shuffle(this.state.data1);
+    });
+  }
+
+  shuffle = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+
+    this.setState({
+      data1: a,
+    });
+  };
+
   selectAnswer = (id, correctAnswer) => {
     this.setState(
       {

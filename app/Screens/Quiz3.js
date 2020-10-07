@@ -114,6 +114,20 @@ class Quiz extends Component {
         ],
         correctAnswer: 1,
       },
+      {
+        question: "هل ممكن المول يكون فيه كوافير؟",
+        answers: [
+          {
+            id: 1,
+            ans: "نعم",
+          },
+          {
+            id: 2,
+            ans: "لا",
+          },
+        ],
+        correctAnswer: 1,
+      },
     ],
     correctAnswers: 0,
   };
@@ -188,6 +202,23 @@ class Quiz extends Component {
           ]
         );
       });
+  };
+
+  componentDidMount() {
+    this.props.navigation.addListener("focus", () => {
+      this.shuffle(this.state.data1);
+    });
+  }
+
+  shuffle = (a) => {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+
+    this.setState({
+      data1: a,
+    });
   };
 
   render() {
